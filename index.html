@@ -69,24 +69,6 @@
                         });
                     
                     
-                        document.getElementById('QRcode').addEventListener('click', () => {
-                            if (!liff.isInClient()) {
-                                //sendAlertIfNotInClient();
-                            } else {
-                                if (liff.scanCode) {
-                                    liff.scanCode().then(result => {
-                                        result = { value: "Hello LIFF app!" }
-                                        const stringifiedResult = JSON.stringify(result);
-                                        //document.getElementById('scanQrField').textContent = stringifiedResult;
-                                        //toggleQrCodeReader();
-                                    }).catch(err => {
-                                        //document.getElementById('scanQrField').textContent = "scanCode failed!";
-                                    });
-                                }
-                            }
-                        });
-                    
-                    
                         document.getElementById('flex').addEventListener('click', () => {
                             liff.sendMessages([{
                                 "type": "flex",
