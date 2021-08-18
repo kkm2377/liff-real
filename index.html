@@ -75,12 +75,12 @@
                             } else {
                                 if (liff.scanCode) {
                                     liff.scanCode().then(result => {
-                                        // e.g. result = { value: "Hello LIFF app!" }
+                                        result = { value: "Hello LIFF app!" }
                                         const stringifiedResult = JSON.stringify(result);
-                                        document.getElementById('scanQrField').textContent = stringifiedResult;
-                                        toggleQrCodeReader();
+                                        //document.getElementById('scanQrField').textContent = stringifiedResult;
+                                        //toggleQrCodeReader();
                                     }).catch(err => {
-                                        document.getElementById('scanQrField').textContent = "scanCode failed!";
+                                        //document.getElementById('scanQrField').textContent = "scanCode failed!";
                                     });
                                 }
                             }
