@@ -62,6 +62,14 @@
                         document.getElementById('message').addEventListener('click', () => {
 
                         });
+                    
+                        document.getElementById('qrcode').addEventListener('click', () => {
+                            if (liff.scanCode) {
+                                liff.scanCode().then(result => {
+                                    result = { value: '' }
+                                });
+                            }
+                        });
 
                         document.getElementById('flex').addEventListener('click', () => {
                             liff.sendMessages([{
@@ -172,7 +180,7 @@
       <input type="button" id="popup" value="popup"/>
       <input type="button" id="message" value="Message"/>
       <input type="button" id="flex" value="flex"/>
-      <input type="button" id="QRcode" value="QRcode"/>
+      <input type="button" id="qrcode" value="QRcode"/>
       <a href="https://android-liff-test.herokuapp.com/index.html" target="_blank">IAB</a>
       <textarea id="log" style="width:96%;height:350px;"></textarea>
     </div>
