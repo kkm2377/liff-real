@@ -22,6 +22,24 @@
                         withLoginOnExternalBrowser: true, // Enable automatic login process
                     })
                     .then(() => {
+        liff.getProfile().then(function (profile) {
+        document.getElementById('useridprofilefield').textContent = profile.userId;
+        document.getElementById('displaynamefield').textContent = profile.displayName;
+
+        var profilePictureDiv = document.getElementById('profilepicturediv');
+        if (profilePictureDiv.firstElementChild) {
+            profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
+        }
+        var img = document.createElement('img');
+        img.src = profile.pictureUrl;
+        img.alt = "Profile Picture";
+        img.width = 200;
+        profilePictureDiv.appendChild(img);
+
+        document.getElementById('statusmessagefield').textContent = profile.statusMessage;
+    }).catch(function (error) {
+        window.alert("Error getting profile: " + error);
+    });
                     var id_token = liff.getDecodedIDToken()
                     var name = JSON.stringify(id_token.name)
                         document.getElementById('go').addEventListener('click', () => {
@@ -37,7 +55,7 @@
                         });
                   
                         document.getElementById('getprofile').addEventListener('click', () => {
-                           document.getElementById("name").innerHTML = name + "님, ";
+                           document.getElementById("name").innerHTML = name + "様、ようこそ！！";
                         });
                     
                    
@@ -74,6 +92,25 @@
     <body>
                 <h3 id="name">333</h3>
         <input type="number" id="num"/></br>
+   <div id="profileinfo">
+        <h2>Profile</h2>
+        <div id="profilepicturediv">
+        </div>
+        <table border="1">
+            <tr>
+                <th>userId</th>
+                <td id="useridprofilefield"></td>
+            </tr>
+            <tr>
+                <th>displayName</th>
+                <td id="displaynamefield"></td>
+            </tr>
+            <tr>
+                <th>statusMessage</th>
+                <td id="statusmessagefield"></td>
+            </tr>
+        </table>
+    </div>
                 <input type="button" id="add_to_home" value="add_to_home"/>
                 <input type="button" id="go" value="実行"/>
                 <input type="button" id="getprofile" value="getprofile"/>
