@@ -22,23 +22,22 @@
                         withLoginOnExternalBrowser: true, // Enable automatic login process
                     })
                     .then(() => {
+                    var id_token = liff.getDecodedIDToken()
+                    var name = JSON.stringify(id_token.name)
                         document.getElementById('go').addEventListener('click', () => {
                             document.getElementById('log').value =
                               '○画面（1対1のチャット、グループ、またはトークルーム）を一意に識別する値\n' +
                               'liff.getContext()=' + JSON.stringify(liff.getContext()) + '\n' +
                               '○ユーザー名等\n' +
-                              'liff.getDecodedIDToken()=' + JSON.stringify(liff.getDecodedIDToken()) + '\n\n\n' +
+                              'liff.getDecodedIDToken()=' + JSON.stringify(id_token.name) + '\n\n\n' +
                               '○ ユーザーのプロフィール\n' +
                               'liff.getProfile()=' + JSON.stringify(liff.getProfile()) + '\n' +
                               '○ Create URL\n' +
                               'liff.permanentLink.createUrl()=' + liff.permanentLink.createUrl() + '\n' ;
                         });
                   
-                        document.getElementById('popup').addEventListener('click', () => {
-                            liff.openWindow({
-                                url: "https://liff.line-beta.me/1655828362-KLxYgqxg",
-                                external: true
-                            });
+                        document.getElementById('getprofile').addEventListener('click', () => {
+                           document.getElementById("name").innerHTML = name + "님, ";
                         });
                     
                    
@@ -73,11 +72,11 @@
     </head>
     
     <body>
-                <h3>環境やトークルームの情報を取得333</h3>
+                <h3 id="name">333</h3>
         <input type="number" id="num"/></br>
                 <input type="button" id="add_to_home" value="add_to_home"/>
                 <input type="button" id="go" value="実行"/>
-                <input type="button" id="popup" value="popup"/>
+                <input type="button" id="getprofile" value="getprofile"/>
                 <input type="button" id="pic" value="pic"/>
                 <input type="button" id="flex" value="flex"/>
                 <input type="button" id="qrcode" value="QRcode"/>
