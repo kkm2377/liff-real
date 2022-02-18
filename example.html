@@ -39,7 +39,7 @@
                         document.getElementById('statusmessagefield').textContent = profile.statusMessage;
                     }).catch(function (error) {
                         window.alert("Error getting profile: " + error);
-//                     });
+                    });
       
                         document.getElementById('add_to_home').addEventListener('click', () => {
                             liff.addToHomeScreen({
@@ -52,7 +52,7 @@
                                 // status == 1:   // added. If shortcut created, return 1 (Android above 8 will always be 1)
                             })
                         });
-                })
+//                 })
             });
             
         </script>
