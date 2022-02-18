@@ -41,6 +41,18 @@
                             }).catch(function (error) {
                                 window.alert("Error getting profile: " + error);
                             });
+                    
+                       document.getElementById('add_to_home').addEventListener('click', () => {
+                            liff.addToHomeScreen({
+                                name: "LINE",
+                                iconUrl: "https://obs-beta.line-scdn.net/0hi2dU1wubNh1ZLCCnLGVJSntxPX9qTigWexgyezx-HU0oSQRLLjEmH3RQDVY_TwQ3LjUyJidHHkkyYAMgZiscAyB8DSw8dDc/f256x256",
+                                state: "/search?q=foo"
+                            }).then((status) => {
+                                // status == -1:  // canceled. If user cancel to add, return -1 (only Android under 8)
+                                // status == 0:   // unknown. iOS always return 0
+                                // status == 1:   // added. If shortcut created, return 1 (Android above 8 will always be 1)
+                            })
+                        });
 
                     })
             });
