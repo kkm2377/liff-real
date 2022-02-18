@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="jp" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <head prefix="website: http://ogp.me/ns/website#">
+        <meta charset="utf-8">
+ 
 
+        <title>liff-real</title>
+
+        <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
+        <script type="text/javascript">
+            /**
+            * Initialize LIFF
+            * @param {string} myLiffId The LIFF app ID of the selected element
+            */
+            document.addEventListener("DOMContentLoaded", () => {
+                liff
+                    .init({
+                        liffId: "1655828362-KLxYgqxg",
+                        withLoginOnExternalBrowser: true, // Enable automatic login process
+                    })
+                    .then(() => {
+                        document.getElementById('go').addEventListener('click', () => {
+                            document.getElementById('log').value =
+                              '○画面（1対1のチャット、グループ、またはトークルーム）を一意に識別する値\n' +
+                              'liff.getContext()=' + JSON.stringify(liff.getContext()) + '\n' +
+                              '○ユーザー名等\n' +
+                              'liff.getDecodedIDToken()=' + JSON.stringify(liff.getDecodedIDToken()) + '\n\n\n' +
+                              '○ ユーザーのプロフィール\n' +
+                              'liff.getProfile()=' + JSON.stringify(liff.getProfile()) + '\n' +
+                              '○ Create URL\n' +
+                              'liff.permanentLink.createUrl()=' + liff.permanentLink.createUrl() + '\n' ;
+                        });
+                  
+                        document.getElementById('popup').addEventListener('click', () => {
+                            liff.openWindow({
+                                url: "https://liff.line-beta.me/1655828362-KLxYgqxg",
+                                external: true
+                            });
+                        });
+                    
+                   
+                    
+                        document.getElementById('qrcode').addEventListener('click', () => {
+                            if (liff.scanCode) {
+                                liff.scanCode().then(result => {
+                                    result = { value: '' }
+                                });
+                            }
+                        });
+                    
+                    
+                   
+                        document.getElementById('add_to_home').addEventListener('click', () => {
+                            liff.addToHomeScreen({
+                                name: "LINE",
+                                iconUrl: "https://obs-beta.line-scdn.net/0hi2dU1wubNh1ZLCCnLGVJSntxPX9qTigWexgyezx-HU0oSQRLLjEmH3RQDVY_TwQ3LjUyJidHHkkyYAMgZiscAyB8DSw8dDc/f256x256",
+                                state: "/search?q=foo"
+                            }).then((status) => {
+                                // status == -1:  // canceled. If user cancel to add, return -1 (only Android under 8)
+                                // status == 0:   // unknown. iOS always return 0
+                                // status == 1:   // added. If shortcut created, return 1 (Android above 8 will always be 1)
+                            })
+                        });
+                })
+            });
+            
+        </script>
+        
+        
+    </head>
+    
+    <body>
+                <h3>環境やトークルームの情報を取得333</h3>
+        <input type="number" id="num"/></br>
+                <input type="button" id="add_to_home" value="add_to_home"/>
+                <input type="button" id="go" value="実行"/>
+                <input type="button" id="popup" value="popup"/>
+         <video height="300" width="100" src="./pin_to_home_tab.mp4" playsinline muted autoplay></video>
+                <input type="button" id="pic" value="pic"/>
+                <input type="button" id="flex" value="flex"/>
+                <input type="button" id="qrcode" value="QRcode"/>
+                <input type="file"/>
+                <a href="https://www.naver.com">naver</a>
+                <a href="https://liff.line-beta.me/1651833066-Bk0XW1Ng">LIFF-to-LIFF</a>
+                <a href="https://android-liff-test.herokuapp.com/index.html" target="_blank">IAB</a>
+                <textarea id="log" style="width:96%;height:350px;"></textarea>
+    </body>
+</html>
