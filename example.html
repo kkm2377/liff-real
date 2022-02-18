@@ -22,40 +22,25 @@
                         withLoginOnExternalBrowser: true, // Enable automatic login process
                     })
                     .then(() => {
-        liff.getProfile().then(function (profile) {
-        document.getElementById('useridprofilefield').textContent = profile.userId;
-        document.getElementById('displaynamefield').textContent = profile.displayName;
+                        liff.getProfile().then(function (profile) {
+                        document.getElementById('useridprofilefield').textContent = profile.userId;
+                        document.getElementById('displaynamefield').textContent = profile.displayName;
 
-        var profilePictureDiv = document.getElementById('profilepicturediv');
-        if (profilePictureDiv.firstElementChild) {
-            profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
-        }
-        var img = document.createElement('img');
-        img.src = profile.pictureUrl;
-        img.alt = "Profile Picture";
-        img.width = 200;
-        profilePictureDiv.appendChild(img);
+                        var profilePictureDiv = document.getElementById('profilepicturediv');
+                        if (profilePictureDiv.firstElementChild) {
+                            profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
+                        }
+                        var img = document.createElement('img');
+                        img.src = profile.pictureUrl;
+                        img.alt = "Profile Picture";
+                        img.width = 200;
+                        profilePictureDiv.appendChild(img);
 
-        document.getElementById('statusmessagefield').textContent = profile.statusMessage;
-    }).catch(function (error) {
-        window.alert("Error getting profile: " + error);
-    });
-                    var id_token = liff.getDecodedIDToken()
-                    var name = JSON.stringify(id_token.name)
-                        document.getElementById('go').addEventListener('click', () => {
-                            document.getElementById('log').value =
-                              '○画面（1対1のチャット、グループ、またはトークルーム）を一意に識別する値\n' +
-                              'liff.getContext()=' + JSON.stringify(liff.getContext()) + '\n' +
-                              '○ユーザー名等\n' +
-                              'liff.getDecodedIDToken()=' + JSON.stringify(id_token.name) + '\n\n\n' +
-                              '○ ユーザーのプロフィール\n' +
-                              'liff.getProfile()=' + JSON.stringify(liff.getProfile()) + '\n' +
-                              '○ Create URL\n' +
-                              'liff.permanentLink.createUrl()=' + liff.permanentLink.createUrl() + '\n' ;
-                        });
-                  
-
-                   
+                        document.getElementById('statusmessagefield').textContent = profile.statusMessage;
+                    }).catch(function (error) {
+                        window.alert("Error getting profile: " + error);
+//                     });
+      
                         document.getElementById('add_to_home').addEventListener('click', () => {
                             liff.addToHomeScreen({
                                 name: "LINE",
