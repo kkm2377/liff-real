@@ -54,21 +54,7 @@
                               'liff.permanentLink.createUrl()=' + liff.permanentLink.createUrl() + '\n' ;
                         });
                   
-                        document.getElementById('getprofile').addEventListener('click', () => {
-                           document.getElementById("name").innerHTML = name + "様、ようこそ！！";
-                        });
-                    
-                   
-                    
-                        document.getElementById('qrcode').addEventListener('click', () => {
-                            if (liff.scanCode) {
-                                liff.scanCode().then(result => {
-                                    result = { value: '' }
-                                });
-                            }
-                        });
-                    
-                    
+
                    
                         document.getElementById('add_to_home').addEventListener('click', () => {
                             liff.addToHomeScreen({
@@ -112,15 +98,7 @@
         </table>
     </div>
                 <input type="button" id="add_to_home" value="add_to_home"/>
-                <input type="button" id="go" value="実行"/>
-                <input type="button" id="getprofile" value="getprofile"/>
-                <input type="button" id="pic" value="pic"/>
-                <input type="button" id="flex" value="flex"/>
-                <input type="button" id="qrcode" value="QRcode"/>
-                <input type="file"/>
-                <a href="https://www.naver.com">naver</a>
-                <a href="https://liff.line-beta.me/1651833066-Bk0XW1Ng">LIFF-to-LIFF</a>
-                <a href="https://android-liff-test.herokuapp.com/index.html" target="_blank">IAB</a>
-                <textarea id="log" style="width:96%;height:350px;"></textarea>
+
+
     </body>
 </html>
