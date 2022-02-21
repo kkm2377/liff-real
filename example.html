@@ -10,7 +10,7 @@
         <title>liff-real</title>
 
         <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
-        <script type="text/javascript">
+        <script defer type="text/javascript">
             /**
             * Initialize LIFF
             * @param {string} myLiffId The LIFF app ID of the selected element
@@ -57,9 +57,11 @@
                     
                     	document.getElementById('subwindow').addEventListener('click', () => {
                             liff.subWindow.open({
-  				                url: "https://liff.line.me/1655821834-xg4aVz10/index.html"
-			    })
-                        });
+  				                url: "https://liff.line.me/1655828362-KLxYgqxg/example.html",
+			                	})
+			});
+			
+			
 
                     })
             });
@@ -70,7 +72,8 @@
     </head>
     
     <body>
-	    <p><h3 id="displaynamefield"</h3><h4>さま、ようこそ！！！</h4></p>
+                <h3 id="name">333</h3>
+        <input type="number" id="num"/></br>
    <div id="profileinfo">
         <h2>Profile</h2>
         <div id="profilepicturediv">
@@ -92,6 +95,7 @@
     </div>
                 <input type="button" id="add_to_home" value="add_to_home"/>
 	    	<input type="button" id="subwindow" value="subwindow"/>
+	        <a href="https://liff.line.me/1655821834-xg4aVz10">LIFF_Transition</a>
 
 
     </body>
