@@ -22,25 +22,25 @@
                         withLoginOnExternalBrowser: true, // Enable automatic login process
                     })
                     .then(() => {
-                        liff.getProfile()
-                            .then(function (profile) {
-                                document.getElementById('useridprofilefield').textContent = profile.userId;
-                                document.getElementById('displaynamefield').textContent = profile.displayName;
+//                         liff.getProfile()
+//                             .then(function (profile) {
+//                                 document.getElementById('useridprofilefield').textContent = profile.userId;
+//                                 document.getElementById('displaynamefield').textContent = profile.displayName;
 
-                                var profilePictureDiv = document.getElementById('profilepicturediv');
-                                if (profilePictureDiv.firstElementChild) {
-                                    profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
-                                }
-                                var img = document.createElement('img');
-                                img.src = profile.pictureUrl;
-                                img.alt = "Profile Picture";
-                                img.width = 200;
-                                profilePictureDiv.appendChild(img);
+//                                 var profilePictureDiv = document.getElementById('profilepicturediv');
+//                                 if (profilePictureDiv.firstElementChild) {
+//                                     profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
+//                                 }
+//                                 var img = document.createElement('img');
+//                                 img.src = profile.pictureUrl;
+//                                 img.alt = "Profile Picture";
+//                                 img.width = 200;
+//                                 profilePictureDiv.appendChild(img);
 
-                                document.getElementById('statusmessagefield').textContent = profile.statusMessage;
-                            }).catch(function (error) {
-                                window.alert("Error getting profile: " + error);
-                            });
+//                                 document.getElementById('statusmessagefield').textContent = profile.statusMessage;
+//                             }).catch(function (error) {
+//                                 window.alert("Error getting profile: " + error);
+//                             });
                     
                        document.getElementById('add_to_home').addEventListener('click', () => {
                             liff.addToHomeScreen({
@@ -72,9 +72,9 @@
     </head>
     
     <body>
-                <p><h3 id="displaynamefield"></h3>様、ようこそ！！</p>
+                <h3 id="displaynamefield"></h3>
 
-   <div id="profileinfo">
+<!--    <div id="profileinfo">
         <h2>Profile</h2>
         <div id="profilepicturediv">
         </div>
@@ -92,7 +92,7 @@
                 <td id="statusmessagefield"></td>
             </tr>
         </table>
-    </div>
+    </div> -->
                 <input type="button" id="add_to_home" value="add_to_home"/>
 	    	<input type="button" id="subwindow" value="subwindow"/>
 	        <a href="https://liff.line.me/1655821834-xg4aVz10">LIFF_Transition</a>
