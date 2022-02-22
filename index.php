@@ -1,3 +1,3 @@
 <?
-    header('Location: /example.html');
+    header('Location: /index.html');
 ?>
