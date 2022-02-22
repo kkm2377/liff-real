@@ -83,22 +83,22 @@
                             });
                     
 			
-			document.getElementById('message').addEventListener('click', () => {
-				var height=document.getElementById("height").value;
+// 			document.getElementById('message').addEventListener('click', () => {
+// 				var height=document.getElementById("height").value;
 				
-				liff.sendMessages([
-					{
-						type: 'text',
-						text: 'your height is ' + height
-					}
-				])
-					.then(() => {
-					console.log('message sent');
-				})
-					.catch((err) => {
-					console.log('error', err);
-				});
-			});
+// 				liff.sendMessages([
+// 					{
+// 						type: 'text',
+// 						text: 'your height is ' + height
+// 					}
+// 				])
+// 					.then(() => {
+// 					console.log('message sent');
+// 				})
+// 					.catch((err) => {
+// 					console.log('error', err);
+// 				});
+// 			});
 
                    
                         document.getElementById('add_to_home').addEventListener('click', () => {
