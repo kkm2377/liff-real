@@ -17,34 +17,34 @@
                         withLoginOnExternalBrowser: true, // Enable automatic login process
                     })
                     .then(() => {
-                        document.getElementById('go').addEventListener('click', () => {
-                            document.getElementById('log').value =
-                              '○言語設定\n' +
-                              'liff.getLanguage()=' + liff.getLanguage() + '\n' +
-                              '○LIFF SDKのバージョン\n' +
-                              'liff.getVersion()=' + liff.getVersion() + '\n' +
-                              '○LIFF LINEのバージョン\n' +
-                              'liff.getLineVersion()=' + liff.getLineVersion() + '\n' +
-                              '○LINE内ブラウザで動作させているかどうか\n' +
-                              'liff.isInClient()=' + liff.isInClient() + '\n' +
-                              '○ログインしているかどうか\n' +
-                              'liff.isLoggedIn()=' + liff.isLoggedIn() + '\n' +
-                              '○OS\n' +
-                              'liff.getOS()=' + liff.getOS() + '\n' +
-                              '○アクセストークン\n' +
-                              'liff.getAccessToken()=' + liff.getAccessToken() + '\n' +
-                              '○Get ID Token\n' +
-                              'liff.getIDToken()=' + liff.getIDToken() + '\n' +
-                              '○画面（1対1のチャット、グループ、またはトークルーム）を一意に識別する値\n' +
-                              'liff.getContext()=' + JSON.stringify(liff.getContext()) + '\n' +
-                              '○ユーザー名等\n' +
-                              'liff.getDecodedIDToken()=' + JSON.stringify(liff.getDecodedIDToken()) + '\n\n\n' +
-                              '○ ユーザーのプロフィール\n' +
-                              'liff.getProfile()=' + JSON.stringify(liff.getProfile()) + '\n' +
-                              '○ Create URL\n' +
-                              'liff.permanentLink.createUrl()=' + liff.permanentLink.createUrl() + '\n' ;
-			      'liff.isApiAvailable()=' +liff.isApiAvailable(param = 'subwindowOpen') + '\n' ;
-                        });
+//                         document.getElementById('go').addEventListener('click', () => {
+//                             document.getElementById('log').value =
+//                               '○言語設定\n' +
+//                               'liff.getLanguage()=' + liff.getLanguage() + '\n' +
+//                               '○LIFF SDKのバージョン\n' +
+//                               'liff.getVersion()=' + liff.getVersion() + '\n' +
+//                               '○LIFF LINEのバージョン\n' +
+//                               'liff.getLineVersion()=' + liff.getLineVersion() + '\n' +
+//                               '○LINE内ブラウザで動作させているかどうか\n' +
+//                               'liff.isInClient()=' + liff.isInClient() + '\n' +
+//                               '○ログインしているかどうか\n' +
+//                               'liff.isLoggedIn()=' + liff.isLoggedIn() + '\n' +
+//                               '○OS\n' +
+//                               'liff.getOS()=' + liff.getOS() + '\n' +
+//                               '○アクセストークン\n' +
+//                               'liff.getAccessToken()=' + liff.getAccessToken() + '\n' +
+//                               '○Get ID Token\n' +
+//                               'liff.getIDToken()=' + liff.getIDToken() + '\n' +
+//                               '○画面（1対1のチャット、グループ、またはトークルーム）を一意に識別する値\n' +
+//                               'liff.getContext()=' + JSON.stringify(liff.getContext()) + '\n' +
+//                               '○ユーザー名等\n' +
+//                               'liff.getDecodedIDToken()=' + JSON.stringify(liff.getDecodedIDToken()) + '\n\n\n' +
+//                               '○ ユーザーのプロフィール\n' +
+//                               'liff.getProfile()=' + JSON.stringify(liff.getProfile()) + '\n' +
+//                               '○ Create URL\n' +
+//                               'liff.permanentLink.createUrl()=' + liff.permanentLink.createUrl() + '\n' ;
+// 			      'liff.isApiAvailable()=' +liff.isApiAvailable(param = 'subwindowOpen') + '\n' ;
+//                         });
 //                         document.getElementById('popup').addEventListener('click', () => {
 //                             liff.openWindow({
 //                                 url: "https://liff.line-beta.me/1655828362-KLxYgqxg",
@@ -151,7 +151,7 @@
         </table>
     </div>
                 <input type="button" id="add_to_home" value="add_to_home"/>
-                <input type="button" id="go" value="実行"/>
+<!--                 <input type="button" id="go" value="実行"/> -->
                 <input type="button" id="subwindow" value="subwindow"/>
 <!--                 <input type="button" id="pic" value="pic"/>
                 <input type="button" id="flex" value="flex"/> -->
@@ -160,7 +160,7 @@
                 <a href="https://www.naver.com">naver</a> -->
                 <a href="https://liff.line.me/1655821834-xg4aVz10">LIFF_Transition</a>
 <!--                 <a href="https://android-liff-test.herokuapp.com/index.html" target="_blank">IAB</a> -->
-                <textarea id="log" style="width:96%;height:350px;"></textarea>
+<!--                 <textarea id="log" style="width:96%;height:350px;"></textarea> -->
 <!-- 	    	<label>Height</label>
 	    	<input type="text" id="height">
 	    	<label>weight</label>
