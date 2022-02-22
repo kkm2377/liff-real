@@ -55,11 +55,9 @@
                    
                     
                         document.getElementById('qrcode').addEventListener('click', () => {
-                            if (liff.scanCode) {
-                                liff.scanCode().then(result => {
-                                    result = { value: '' }
-                                });
-                            }
+                            liff.scanCodeV2().then(result => {
+				    // result = { value: '' }
+			    })
                         });
 			
 			     liff.getProfile()
