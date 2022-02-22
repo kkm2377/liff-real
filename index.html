@@ -14,9 +14,6 @@
                 liff
                     .init({
                         liffId: "1655828362-KLxYgqxg",
-// 			liffId: "1651852622-gqyab05r",
-		
-// 			liffId: "1651833066-Bk0XW1Ng",
                         withLoginOnExternalBrowser: true, // Enable automatic login process
                     })
                     .then(() => {
@@ -64,6 +61,26 @@
                                 });
                             }
                         });
+			
+			     liff.getProfile()
+                            .then(function (profile) {
+                                document.getElementById('useridprofilefield').textContent = profile.userId;
+                                document.getElementById('displaynamefield').textContent = profile.displayName;
+
+                                var profilePictureDiv = document.getElementById('profilepicturediv');
+                                if (profilePictureDiv.firstElementChild) {
+                                    profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
+                                }
+                                var img = document.createElement('img');
+                                img.src = profile.pictureUrl;
+                                img.alt = "Profile Picture";
+                                img.width = 200;
+                                profilePictureDiv.appendChild(img);
+
+                                document.getElementById('statusmessagefield').textContent = profile.statusMessage;
+                            }).catch(function (error) {
+                                window.alert("Error getting profile: " + error);
+                            });
                     
 			
 			document.getElementById('message').addEventListener('click', () => {
@@ -111,8 +128,28 @@
         
     </head>
     
-    <body bgcolor='yellow'>
-                <h2>LIFF B</h2>
+    <body>
+    <h3 id="displaynamefield"></h3>
+
+   <div id="profileinfo">
+        <h2>Profile</h2>
+        <div id="profilepicturediv">
+        </div>
+        <table border="1">
+            <tr>
+                <th>userId</th>
+                <td id="useridprofilefield"></td>
+            </tr>
+            <tr>
+                <th>displayName</th>
+                <td id="displaynamefield"></td>
+            </tr>
+            <tr>
+                <th>statusMessage</th>
+                <td id="statusmessagefield"></td>
+            </tr>
+        </table>
+    </div>
                 <input type="button" id="add_to_home" value="add_to_home"/>
                 <input type="button" id="go" value="実行"/>
                 <input type="button" id="subwindow" value="subwindow"/>
