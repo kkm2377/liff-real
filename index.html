@@ -65,8 +65,16 @@
 
 			});
 			
-			document.getElementById('lifflogout').addEventListener('click', () => {
-					liff.logout()
+// 			document.getElementById('lifflogout').addEventListener('click', () => {
+// 					liff.logout()
+
+// 			});
+			
+			document.getElementById('iab').addEventListener('click', () => {
+					liff.openWindow({
+					  url: "https://liff.line.me/1655828362-KLxYgqxg",
+					  external: true,
+					});
 
 			});
 
@@ -102,9 +110,9 @@
     </div>
                 <input type="button" id="add_to_home" value="add_to_home"/>
                 <input type="button" id="subwindow" value="subwindow"/>
-	    <input type="button" id="lifflogout" value="lifflogout"/>
+<!-- 	    <input type="button" id="lifflogout" value="lifflogout"/> -->
                 <input type="button" id="qrcode" value="QRcode"/>
-	    <a href="https://liff-real.herokuapp.com/" target="_blank">IAB</a>
+                <input type="button" id="iab" value="IAB"/>
                 <a href="https://liff.line.me/1655821834-xg4aVz10">LIFF_Transition</a>
 
     </body>
