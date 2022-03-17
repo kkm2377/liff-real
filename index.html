@@ -73,6 +73,14 @@
 			document.getElementById('iab').addEventListener('click', () => {
 					liff.openWindow({
 					  url: "https://liff.line.me/1655828362-KLxYgqxg",
+					  external: false,
+					});
+
+			});
+			
+			document.getElementById('external').addEventListener('click', () => {
+					liff.openWindow({
+					  url: "https://liff.line.me/1655828362-KLxYgqxg",
 					  external: true,
 					});
 
@@ -113,6 +121,7 @@
 <!-- 	    <input type="button" id="lifflogout" value="lifflogout"/> -->
                 <input type="button" id="qrcode" value="QRcode"/>
                 <input type="button" id="iab" value="IAB"/>
+	        <input type="button" id="external" value="External_Browser"/>
                 <a href="https://liff.line.me/1655821834-xg4aVz10">LIFF_Transition</a>
 
     </body>
