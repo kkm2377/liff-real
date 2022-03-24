@@ -18,7 +18,7 @@
                         withLoginOnExternalBrowser: true, // Enable automatic login process
                     })
                     .then(() => {
-			location.replace("http://liff-real.herokuapp.com/liff/line/");
+
                         document.getElementById('qrcode').addEventListener('click', () => {
                             liff.scanCodeV2().then(result => {
 			    })
@@ -143,6 +143,7 @@
                 <input type="button" id="iab" value="IAB"/>
 	        <input type="button" id="external" value="External_Browser"/>
                 <a href="https://liff.line.me/1655821834-xg4aVz10">LIFF_Transition</a>
+	    	<a href="https://liff.line.me/1655828362-KLxYgqxg/liff/line">liff/line</a>
 
     </body>
 </html>
