@@ -85,10 +85,13 @@
 
 			});
 			
-// 			document.getElementById('lifflogout').addEventListener('click', () => {
-// 					liff.logout()
+			document.getElementById('module_subwindow').addEventListener('click', () => {
+					liff.subWindow.open({
+						url: 'https://liff.line.me/1655821834-xg4aVz10',
+					})
 
-// 			});
+			});
+			
 			
 			document.getElementById('iab').addEventListener('click', () => {
 					liff.openWindow({
@@ -138,6 +141,7 @@
     </div>
                 <input type="button" id="add_to_home" value="add_to_home"/>
                 <input type="button" id="subwindow" value="sub_window"/>
+	    <input type="button" id="module_subwindow" value="module_sub_window"/>
 <!-- 	    <input type="button" id="lifflogout" value="lifflogout"/> -->
                 <input type="button" id="qrcode" value="QRcode"/>
                 <input type="button" id="iab" value="IAB"/>
