@@ -7,97 +7,12 @@
         <meta charset="utf-8">
  
 
-        <title>liff-Example/title>
-
-        <script charset="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-        <script defer type="text/javascript">
-            /**
-            * Initialize LIFF
-            * @param {string} myLiffId The LIFF app ID of the selected element
-            */
-            document.addEventListener("DOMContentLoaded", () => {
-                liff
-                    .init({
-                        liffId: "1655828362-KLxYgqxg",
-                        withLoginOnExternalBrowser: true, // Enable automatic login process
-                    })
-                    .then(() => {
-
-                    
-                       document.getElementById('add_to_home').addEventListener('click', () => {
-                            liff.addToHomeScreen({
-                                name: "LINE",
-                                iconUrl: "https://obs-beta.line-scdn.net/0hi2dU1wubNh1ZLCCnLGVJSntxPX9qTigWexgyezx-HU0oSQRLLjEmH3RQDVY_TwQ3LjUyJidHHkkyYAMgZiscAyB8DSw8dDc/f256x256",
-                                state: "/search?q=foo"
-                            }).then((status) => {
-                                // status == -1:  // canceled. If user cancel to add, return -1 (only Android under 8)
-                                // status == 0:   // unknown. iOS always return 0
-                                // status == 1:   // added. If shortcut created, return 1 (Android above 8 will always be 1)
-                            })
-                        });
-                    
-                    
-                    	document.getElementById('subwindow').addEventListener('click', () => {
-                            liff.subWindow.open({
-  				                url: "https://liff.line.me/1655828362-KLxYgqxg",
-			                	})
-			});
-			
-			                        liff.getProfile()
-                            .then(function (profile) {
-                                document.getElementById('useridprofilefield').textContent = profile.userId;
-                                document.getElementById('displaynamefield').textContent = profile.displayName;
-
-                                var profilePictureDiv = document.getElementById('profilepicturediv');
-                                if (profilePictureDiv.firstElementChild) {
-                                    profilePictureDiv.removeChild(profilePictureDiv.firstElementChild);
-                                }
-                                var img = document.createElement('img');
-                                img.src = profile.pictureUrl;
-                                img.alt = "Profile Picture";
-                                img.width = 200;
-                                profilePictureDiv.appendChild(img);
-
-                                document.getElementById('statusmessagefield').textContent = profile.statusMessage;
-                            }).catch(function (error) {
-                                window.alert("Error getting profile: " + error);
-                            });
-			
-
-                    })
-            });
-            
-        </script>
-        
+        <title>liff-Example</title>
         
     </head>
     
     <body>
-                <h3 id="displaynamefield"></h3>
-
-   <div id="profileinfo">
-        <h2>Profile</h2>
-        <div id="profilepicturediv">
-        </div>
-        <table border="1">
-            <tr>
-                <th>userId</th>
-                <td id="useridprofilefield"></td>
-            </tr>
-            <tr>
-                <th>displayName</th>
-                <td id="displaynamefield"></td>
-            </tr>
-            <tr>
-                <th>statusMessage</th>
-                <td id="statusmessagefield"></td>
-            </tr>
-        </table>
-    </div>
-                <input type="button" id="add_to_home" value="add_to_home"/>
-	    	<input type="button" id="subwindow" value="subwindow"/>
-	        <a href="https://liff.line.me/1655821834-xg4aVz10">LIFF_Transition</a>
-
+	    hahahaha
 
     </body>
 </html>
