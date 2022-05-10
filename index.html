@@ -19,10 +19,7 @@
                     })
                     .then(() => {
 
-                        document.getElementById('qrcode').addEventListener('click', () => {
-                            liff.scanCodeV2().then(result => {
-			    })
-                        });
+
 			
 			     liff.getProfile()
                             .then(function (profile) {
@@ -95,11 +92,16 @@
 			
 			document.getElementById('iab').addEventListener('click', () => {
 					liff.openWindow({
-					  url: "https://liff-real.herokuapp.com/",
+					  url: "https://polite-druid-c85040.netlify.app/",
 					  external: false,
 					});
 
 			});
+			
+			document.getElementById('qrcode').addEventListener('click', () => {
+                            		liff.scanCodeV2().then(result => {
+			    		});
+                        });
 			
 			document.getElementById('external').addEventListener('click', () => {
 					liff.openWindow({
