@@ -18,7 +18,12 @@
                         withLoginOnExternalBrowser: true, // Enable automatic login process
                     })
                     .then(() => {
-
+			
+                        document.getElementById('qrcode2').addEventListener('click', () => {
+				alert("HHHHH");
+                            liff.scanCodeV2().then(result => {
+			    })
+                        });
 
 			
 			     liff.getProfile()
@@ -147,7 +152,7 @@
                 <input type="button" id="subwindow" value="sub_window"/>
 	    <input type="button" id="module_subwindow" value="module_sub_window"/>
 <!-- 	    <input type="button" id="lifflogout" value="lifflogout"/> -->
-                <input type="button" id="qrcode" value="QRcode"/>
+                <input type="button" id="qrcode2" value="QRcode"/>
                 <input type="button" id="iab" value="IAB"/>
 	        <input type="button" id="external" value="External_Browser"/>
                 <a href="https://liff.line.me/1655821834-xg4aVz10">LIFF_Transition</a>
