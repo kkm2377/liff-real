@@ -99,8 +99,9 @@
 			});
 			
 			document.getElementById('qrcode').addEventListener('click', () => {
-                            		liff.scanCodeV2().then(result => {
-			    		});
+                            		liff.scanCodeV2().then((result) => {
+					  // result = { value: "" }
+					});
                         });
 			
 			document.getElementById('external').addEventListener('click', () => {
@@ -149,7 +150,7 @@
                 <input type="button" id="iab" value="IAB"/>
 	        <input type="button" id="external" value="External_Browser"/>
                 <a href="https://liff.line.me/1655821834-xg4aVz10">LIFF_Transition</a>
-	    	<a href="https://liff.line.me/1655828362-KLxYgqxg/liff/line">liff/line</a>
+<!-- 	    	<a href="https://liff.line.me/1655828362-KLxYgqxg/liff/line">liff/line</a> -->
 	     <a href="https://www.facebook.com/">facebook</a>
 
     </body>
