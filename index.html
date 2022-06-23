@@ -121,6 +121,14 @@
 
 			});
 			
+			
+			document.getElementById('lifflogout').addEventListener('click', () => {
+					if (liff.isLoggedIn()) {
+					  liff.logout();
+					}
+
+			});
+			
 // 			document.getElementById('qrcode').addEventListener('click', () => {
 // 					liff.scanCodeV2().then((result) => {
 // 					   result = { value: "" }
@@ -169,7 +177,7 @@
                 <input type="button" id="add_to_home" value="add_to_home"/>
                 <input type="button" id="subwindow" value="sub_window"/>
 	    <input type="button" id="module_subwindow" value="module_sub_window"/>
-<!-- 	    <input type="button" id="lifflogout" value="lifflogout"/> -->
+	    <input type="button" id="lifflogout" value="liff_logout"/>
                 <input type="button" id="qrcode" value="QRcode"/>
                 <input type="button" id="iab" value="Open_Setting"/>
 	    	<input type="button" id="close" value="Close_window"/>
